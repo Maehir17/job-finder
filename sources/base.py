@@ -1,3 +1,4 @@
+import concurrent.futures as cf
 import hashlib
 from dataclasses import dataclass
 
@@ -16,6 +17,16 @@ def get_json(session: requests.Session, url: str, timeout: int = 30):
     r = session.get(url, timeout=timeout)
     r.raise_for_status()
     return r.json()
+
+
+def fetch_boards(slugs, fetch_one, workers: int = 16) -> list:
+    # Poll many company boards in parallel; fetch_one(slug) returns list[Job]
+    # and handles its own errors so one bad board can't sink the batch.
+    jobs = []
+    with cf.ThreadPoolExecutor(max_workers=workers) as ex:
+        for result in ex.map(fetch_one, slugs):
+            jobs.extend(result)
+    return jobs
 
 
 @dataclass

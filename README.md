@@ -24,13 +24,14 @@ get thousands of existing jobs at once.
 ## Setup
 
 1. Push this folder to a new GitHub repo.
-2. Create a Gmail App Password (Google Account, Security, 2-Step Verification,
-   App passwords). This is not your normal password.
+2. Sign up at resend.com using the address you want alerts sent to, and create
+   an API key with sending access. With no verified domain, Resend sends from
+   `onboarding@resend.dev` to that same signup address.
 3. In the repo, go to Settings > Secrets and variables > Actions and add:
-   - `GMAIL_USER`: the sending Gmail address
-   - `GMAIL_APP_PASSWORD`: the 16-character app password
+   - `RESEND_API_KEY`: the key from Resend (starts with `re_`)
    - optional variable `NOTIFY_EMAIL` to change the recipient from the default
      `redacted@example.com`
+   - optional variable `SENDER` if you verify your own domain in Resend
 4. In the Actions tab, run job-finder once to bootstrap.
 
 ## Local testing

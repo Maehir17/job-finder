@@ -1,25 +1,27 @@
-import smtplib
 from collections import defaultdict
-from email.message import EmailMessage
 from html import escape
+
+import requests
 
 import config
 from sources.base import Job
 
 
 def _send(subject: str, html: str) -> None:
-    if not config.GMAIL_USER or not config.GMAIL_APP_PASSWORD:
-        raise RuntimeError("GMAIL_USER / GMAIL_APP_PASSWORD not set")
-    msg = EmailMessage()
-    msg["Subject"] = subject
-    msg["From"] = config.GMAIL_USER
-    msg["To"] = config.NOTIFY_EMAIL
-    msg.set_content("This digest requires an HTML-capable email client.")
-    msg.add_alternative(html, subtype="html")
-    with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
-        smtp.starttls()
-        smtp.login(config.GMAIL_USER, config.GMAIL_APP_PASSWORD)
-        smtp.send_message(msg)
+    if not config.RESEND_API_KEY:
+        raise RuntimeError("RESEND_API_KEY not set")
+    r = requests.post(
+        "https://api.resend.com/emails",
+        headers={"Authorization": f"Bearer {config.RESEND_API_KEY}"},
+        json={
+            "from": config.SENDER,
+            "to": [config.NOTIFY_EMAIL],
+            "subject": subject,
+            "html": html,
+        },
+        timeout=30,
+    )
+    r.raise_for_status()
 
 
 def send_digest(new_jobs: list[Job]) -> None:

@@ -3,7 +3,7 @@ import sys
 import config
 import notify
 import storage
-from filters import is_relevant
+from filters import is_recent, is_relevant, is_us
 from sources import ashby, community, greenhouse, lever
 
 SOURCES = [
@@ -35,8 +35,13 @@ def main() -> int:
         if not j.url or j.uid in seen_uid:
             continue
         seen_uid.add(j.uid)
-        if is_relevant(j.title, j.category, from_ats=(j.category == "ATS")):
-            relevant.append(j)
+        if not is_relevant(j.title, j.category, from_ats=(j.category == "ATS")):
+            continue
+        if not is_us(j.location):
+            continue
+        if not is_recent(j.date_posted, config.MAX_AGE_DAYS):
+            continue
+        relevant.append(j)
 
     print(f"relevant after filtering: {len(relevant)}")
 

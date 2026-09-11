@@ -21,7 +21,7 @@ def _fetch_one(slug: str) -> list[Job]:
                 url=j.get("absolute_url", ""),
                 location=loc,
                 category="ATS",
-                date_posted=(j.get("updated_at") or "")[:10],
+                date_posted=(j.get("first_published") or j.get("updated_at") or "")[:10],
                 native_id=str(j.get("id", "")),
             )
         )

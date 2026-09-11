@@ -2,7 +2,7 @@ name: job-finder
 
 on:
   schedule:
-    - cron: "0 */4 * * *"   # every 4 hours (UTC)
+    - cron: "*/15 * * * *"   # every 15 minutes (UTC)
   workflow_dispatch: {}       # allow manual runs
 
 permissions:

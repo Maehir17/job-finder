@@ -27,7 +27,7 @@ jobs:
       - name: Find jobs and notify
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_EMAIL: ${{ vars.NOTIFY_EMAIL || 'redacted@example.com' }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: python main.py
 
       - name: Persist seen state

@@ -71,6 +71,7 @@ Ashby:8950482374f0231f
 Ashby:8a3a367b388bf91f
 Ashby:8ac7a7b1d2f0ac38
 Ashby:8d3aa157062f905a
+Ashby:8e80cb87b6c01488
 Ashby:8efa0cf753282f34
 Ashby:9255b33d4d545447
 Ashby:97a3287abf1cf17f
@@ -864,6 +865,7 @@ Simplify:50cfb7145709a04a
 Simplify:50e020813cc38b3b
 Simplify:512b2baf0358f822
 Simplify:5133acc4afffb958
+Simplify:515a5760769ec9a2
 Simplify:515c8e5b6266f6f5
 Simplify:5161ea656436e349
 Simplify:517dd69bbe8193ab
@@ -908,6 +910,7 @@ Simplify:5694c2113229ff21
 Simplify:56c0fe03ae8928b2
 Simplify:56c30995dab9108c
 Simplify:57b2d2eb91d83858
+Simplify:57db759afc293f54
 Simplify:57f195128a9aa49b
 Simplify:57f362ec61512761
 Simplify:57f8f2fc3eccea19
@@ -1285,6 +1288,7 @@ Simplify:90fe956a9c96bbe8
 Simplify:9180095eb49dc76b
 Simplify:91c743cffdf08f64
 Simplify:91f1c54b878e39c1
+Simplify:920a82ab1678e8c8
 Simplify:920c5b39b6a3358f
 Simplify:9223539af558e821
 Simplify:925b693524a240bd
@@ -1521,6 +1525,7 @@ Simplify:b97ee1dc897eb5d7
 Simplify:b9e1aafdafb7b5d7
 Simplify:b9eb6112c46f7bf9
 Simplify:ba219da1e9002d62
+Simplify:ba2b5718a308c999
 Simplify:ba2d0490df0bc382
 Simplify:ba4169a07854d74a
 Simplify:ba527e06ca5a4e8f

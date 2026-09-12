@@ -4,13 +4,30 @@ import config
 import notify
 import storage
 from filters import is_recent, is_relevant, is_us
-from sources import ashby, community, greenhouse, lever
+from sources import (
+    adzuna,
+    ashby,
+    community,
+    greenhouse,
+    lever,
+    remoteok,
+    remotive,
+    themuse,
+    usajobs,
+    weworkremotely,
+)
 
 SOURCES = [
     ("community", community.fetch),
     ("greenhouse", greenhouse.fetch),
     ("lever", lever.fetch),
     ("ashby", ashby.fetch),
+    ("remoteok", remoteok.fetch),
+    ("remotive", remotive.fetch),
+    ("themuse", themuse.fetch),
+    ("weworkremotely", weworkremotely.fetch),
+    ("usajobs", usajobs.fetch),
+    ("adzuna", adzuna.fetch),
 ]
 
 

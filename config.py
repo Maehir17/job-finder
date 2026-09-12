@@ -15,3 +15,10 @@ DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 
 # Drop postings older than this many days.
 MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "30"))
+
+# Optional source API keys. Each source stays dormant until its keys are set.
+USAJOBS_KEY = os.environ.get("USAJOBS_KEY", "")
+USAJOBS_EMAIL = os.environ.get("USAJOBS_EMAIL", "")
+ADZUNA_APP_ID = os.environ.get("ADZUNA_APP_ID", "")
+ADZUNA_APP_KEY = os.environ.get("ADZUNA_APP_KEY", "")
+THEMUSE_API_KEY = os.environ.get("THEMUSE_API_KEY", "")

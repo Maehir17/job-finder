@@ -46,7 +46,9 @@ _NON_SOFTWARE = re.compile(
     r"mechanisms|launch|propulsion|thermal|avionics|antenna|packaging|"
     r"formulations|characterization|geotechnical|traffic|transportation|"
     r"water resources|process|production|controls|guidance|navigation|"
-    r"mining|petroleum|drilling|welding|piping|hvac)\b",
+    r"mining|petroleum|drilling|welding|piping|hvac|"
+    r"construction|mechatronic|human factors|consultant|acoustic|"
+    r"metallurg|geospatial|surveying)\b",
     re.I,
 )
 

@@ -29,8 +29,7 @@ get thousands of existing jobs at once.
    `onboarding@resend.dev` to that same signup address.
 3. In the repo, go to Settings > Secrets and variables > Actions and add:
    - `RESEND_API_KEY`: the key from Resend (starts with `re_`)
-   - optional variable `NOTIFY_EMAIL` to change the recipient from the default
-     `redacted@example.com`
+   - `NOTIFY_EMAIL`: the address alerts are sent to
    - optional variable `SENDER` if you verify your own domain in Resend
 4. In the Actions tab, run job-finder once to bootstrap.
 

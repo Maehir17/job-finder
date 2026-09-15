@@ -1,5 +1,4 @@
 import os
-import sys
 
 from .base import Job, http
 
@@ -28,16 +27,12 @@ def fetch() -> list[Job]:
     jobs = []
     for kw in _KEYWORDS:
         try:
-            resp = s.get(
+            data = s.get(
                 _URL,
                 params={"Keyword": kw, "ResultsPerPage": 250, "WhoMayApply": "public"},
                 timeout=30,
-            )
-            print(f"[usajobs] '{kw}' status={resp.status_code} "
-                  f"body={resp.text[:200]!r}", file=sys.stderr)
-            data = resp.json()
-        except Exception as e:
-            print(f"[usajobs] '{kw}' ERROR {e}", file=sys.stderr)
+            ).json()
+        except Exception:
             continue
         items = (data.get("SearchResult") or {}).get("SearchResultItems") or []
         for it in items:

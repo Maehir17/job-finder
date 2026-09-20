@@ -75,6 +75,14 @@ def main() -> int:
         print("DRY_RUN: no email sent, state unchanged")
         return 0
 
+    if config.DEMO:
+        # Send a sample digest of the newest roles to preview the format;
+        # leaves state untouched so real alerts are unaffected.
+        sample = sorted(relevant, key=lambda j: j.date_posted or "", reverse=True)[:12]
+        notify.send_digest(sample)
+        print(f"DEMO: emailed {len(sample)} sample roles, state unchanged")
+        return 0
+
     if storage.is_bootstrap():
         # First run: record everything silently so future roles trigger alerts.
         storage.save_seen(all_uids)

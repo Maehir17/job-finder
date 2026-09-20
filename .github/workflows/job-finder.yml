@@ -3,7 +3,12 @@ name: job-finder
 on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 minutes (UTC)
-  workflow_dispatch: {}       # allow manual runs
+  workflow_dispatch:          # allow manual runs
+    inputs:
+      demo:
+        description: "Email a sample digest to preview the format (state unchanged)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write             # needed to commit updated state/seen.txt
@@ -26,6 +31,7 @@ jobs:
 
       - name: Find jobs and notify
         env:
+          DEMO: ${{ inputs.demo }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
           USAJOBS_KEY: ${{ secrets.USAJOBS_KEY }}

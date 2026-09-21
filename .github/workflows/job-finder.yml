@@ -34,6 +34,7 @@ jobs:
           DEMO: ${{ inputs.demo }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          NOTIFY_EMAIL_PM: ${{ secrets.NOTIFY_EMAIL_PM }}
           USAJOBS_KEY: ${{ secrets.USAJOBS_KEY }}
           USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
@@ -44,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add state/seen.txt
+          git add state/*.txt
           if git diff --cached --quiet; then
             echo "no state change"
           else

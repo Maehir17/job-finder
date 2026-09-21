@@ -7,7 +7,10 @@ from .base import Job, http
 _KEY = os.environ.get("USAJOBS_KEY", "")
 _EMAIL = os.environ.get("USAJOBS_EMAIL", "")
 _URL = "https://data.usajobs.gov/api/search"
-_KEYWORDS = ["software engineer", "software developer", "data engineer"]
+_KEYWORDS = [
+    "software engineer", "software developer", "data engineer",
+    "program manager", "management analyst", "program analyst",
+]
 
 
 def _session():

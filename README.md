@@ -1,8 +1,18 @@
 # Job Finder
 
-Finds full-time, entry-level software (and adjacent) job postings from many
-sources, removes duplicates, and emails you only the new ones. Runs on GitHub
-Actions every 4 hours.
+Finds job postings from many sources, removes duplicates, and emails only the
+new ones. Runs on GitHub Actions every 15 minutes.
+
+## Trackers
+
+The pipeline fetches every source once, then runs one or more profiles over the
+shared pool. Each profile has its own filters, recipient, and state file, and is
+active only when its recipient is set (see `profiles.py`).
+
+| Profile | Roles | Locations | Recipient secret |
+|---|---|---|---|
+| `swe` | Full-time entry-level software and adjacent | US | `NOTIFY_EMAIL` |
+| `pm` | Full-time entry-level product / project / strategy, plus internships at curated "good companies" | Full-time: US. Internships: NYC, SF Bay Area, Chicago | `NOTIFY_EMAIL_PM` |
 
 ## Sources
 
@@ -16,10 +26,10 @@ are filtered for entry-level titles, since those boards list every role.
 
 ## How "only new roles" works
 
-`state/seen.txt` holds every posting id seen so far and is committed back to the
-repo after each run. New ids get emailed. The first run records all current
-postings without emailing them and sends a one-time setup summary, so you don't
-get thousands of existing jobs at once.
+Each profile keeps its own seen-ids file (`state/seen.txt`, `state/seen_pm.txt`)
+committed back to the repo after each run. New ids get emailed. A profile's first
+run records all current postings without emailing them and sends a one-time setup
+summary, so you don't get thousands of existing jobs at once.
 
 ## Setup
 
@@ -29,7 +39,9 @@ get thousands of existing jobs at once.
    `onboarding@resend.dev` to that same signup address.
 3. In the repo, go to Settings > Secrets and variables > Actions and add:
    - `RESEND_API_KEY`: the key from Resend (starts with `re_`)
-   - `NOTIFY_EMAIL`: the address alerts are sent to
+   - `NOTIFY_EMAIL`: recipient for the software tracker
+   - `NOTIFY_EMAIL_PM`: recipient for the product/strategy tracker (optional; the
+     tracker stays off until this is set)
    - optional variable `SENDER` if you verify your own domain in Resend
 4. In the Actions tab, run job-finder once to bootstrap.
 
@@ -44,7 +56,9 @@ This fetches, filters, and prints results without sending email or writing state
 
 ## Tuning
 
-- Which roles match: edit the regexes in `filters.py` (`_ENTRY`, `_SENIOR`,
-  `_SOFTWARE`, `_NON_SOFTWARE`) and `ALLOWED_CATEGORIES`.
-- Which companies: add or remove slugs in `companies.py`.
+- Which software roles match: edit the regexes in `filters.py`.
+- Which product/strategy roles match, the metros, and the "good companies" list:
+  edit `pm_filters.py`.
+- Which companies' boards are polled: add or remove slugs in `companies.py`.
+- Add or change a tracker: edit `profiles.py`.
 - Frequency: change the `cron` in `.github/workflows/job-finder.yml`.

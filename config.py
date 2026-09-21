@@ -10,6 +10,9 @@ SENDER = os.environ.get("SENDER", "Job Finder <onboarding@resend.dev>")
 # Where alerts are delivered (set via env / GitHub Actions secret).
 NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", "")
 
+# Recipient for the product / project / strategy tracker. Empty = tracker off.
+NOTIFY_EMAIL_PM = os.environ.get("NOTIFY_EMAIL_PM", "")
+
 # When true, gather + filter + print but never send email or write state.
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 

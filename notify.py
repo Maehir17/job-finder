@@ -56,7 +56,7 @@ def _age(date_posted: str) -> tuple[str, int]:
     return ("today" if days <= 0 else f"{days}d"), days
 
 
-def _send(subject: str, html: str) -> None:
+def _send(subject: str, html: str, to: str) -> None:
     if not config.RESEND_API_KEY:
         raise RuntimeError("RESEND_API_KEY not set")
     r = requests.post(
@@ -64,7 +64,7 @@ def _send(subject: str, html: str) -> None:
         headers={"Authorization": f"Bearer {config.RESEND_API_KEY}"},
         json={
             "from": config.SENDER,
-            "to": [config.NOTIFY_EMAIL],
+            "to": [to],
             "subject": subject,
             "html": html,
         },
@@ -108,7 +108,8 @@ def _row(j: Job) -> str:
     )
 
 
-def send_digest(new_jobs: list[Job]) -> None:
+def send_digest(new_jobs: list[Job], to: str, hero_noun: str = "software",
+                subject_noun: str = "entry-level SWE") -> None:
     # Freshest first; postings without a date sort to the bottom.
     jobs = sorted(new_jobs, key=lambda j: j.date_posted or "", reverse=True)
     n = len(jobs)
@@ -135,7 +136,7 @@ def send_digest(new_jobs: list[Job]) -> None:
 
       <div style="padding:20px 22px 4px">
         <span style="font-size:34px;font-weight:800;color:{_ACCENT};vertical-align:middle">{n}</span>
-        <span style="font-size:21px;font-weight:600;color:{_INK};vertical-align:middle;margin-left:8px">new software role{s}</span>
+        <span style="font-size:21px;font-weight:600;color:{_INK};vertical-align:middle;margin-left:8px">new {hero_noun} role{s}</span>
         <div style="font-size:15px;color:{_MUTED};margin-top:6px">Entry-level &middot; United States &middot; posted recently</div>
       </div>
 
@@ -151,10 +152,10 @@ def send_digest(new_jobs: list[Job]) -> None:
     </td></tr>
   </table>
 </div>"""
-    _send(f"[Job Finder] {n} new entry-level SWE role{s}", html)
+    _send(f"[Job Finder] {n} new {subject_noun} role{s}", html, to)
 
 
-def send_bootstrap(count: int) -> None:
+def send_bootstrap(count: int, to: str, subject_noun: str = "entry-level SWE") -> None:
     html = f"""\
 <div style="margin:0;padding:26px 14px;background:{_PAGE};font-family:{_FONT}">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto">
@@ -164,10 +165,10 @@ def send_bootstrap(count: int) -> None:
         <span style="font-size:19px;font-weight:700;color:{_INK};vertical-align:middle;margin-left:10px">Job Finder is live</span>
       </div>
       <p style="font-size:16px;color:{_INK};line-height:1.55;margin:16px 0 0">
-        Tracking <b>{count}</b> current entry-level software roles. From now on you'll only be
+        Tracking <b>{count}</b> current {subject_noun} roles. From now on you'll only be
         emailed about <b>new</b> ones, checked every 15 minutes.
       </p>
     </td></tr>
   </table>
 </div>"""
-    _send(f"[Job Finder] Tracking {count} roles, setup complete", html)
+    _send(f"[Job Finder] Tracking {count} roles, setup complete", html, to)

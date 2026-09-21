@@ -7,7 +7,10 @@ from .base import Job, http
 _APP_ID = os.environ.get("ADZUNA_APP_ID", "")
 _APP_KEY = os.environ.get("ADZUNA_APP_KEY", "")
 _BASE = "https://api.adzuna.com/v1/api/jobs/us/search"
-_QUERIES = ["software engineer", "software developer", "data engineer"]
+_QUERIES = [
+    "software engineer", "software developer", "data engineer",
+    "product manager", "program manager", "strategy",
+]
 _MAX_PAGES = 5
 _session = http()
 

@@ -14,6 +14,7 @@ class Profile:
     hero_noun: str                 # e.g. "software" -> "N new software roles"
     subject_noun: str              # e.g. "entry-level SWE"
     matches: Callable[[Job], bool]
+    resend_key: str                # Resend API key this profile sends with
 
 
 def _swe_match(j: Job) -> bool:
@@ -33,8 +34,10 @@ def active_profiles() -> list[Profile]:
     # tracker stays dormant until NOTIFY_EMAIL_PM is set.
     profiles = []
     if config.NOTIFY_EMAIL:
-        profiles.append(Profile("swe", config.NOTIFY_EMAIL, "software", "entry-level SWE", _swe_match))
+        profiles.append(Profile("swe", config.NOTIFY_EMAIL, "software", "entry-level SWE",
+                                _swe_match, config.RESEND_API_KEY))
     if config.NOTIFY_EMAIL_PM:
         profiles.append(Profile("pm", config.NOTIFY_EMAIL_PM, "product & strategy",
-                                "product / strategy", _pm_match))
+                                "product / strategy", _pm_match,
+                                config.RESEND_API_KEY_PM or config.RESEND_API_KEY))
     return profiles

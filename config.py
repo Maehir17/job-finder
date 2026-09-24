@@ -3,6 +3,11 @@ import os
 # Resend API key (send-only), from env / GitHub Actions secrets.
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
 
+# Optional separate Resend key for the PM tracker, so it can send from a second
+# Resend account (e.g. one signed up with the recipient's email). Falls back to the
+# main key when unset.
+RESEND_API_KEY_PM = os.environ.get("RESEND_API_KEY_PM", "")
+
 # Resend's shared sender works without a verified domain, but only delivers to
 # the account's own signup email. Override with a verified domain to send freely.
 SENDER = os.environ.get("SENDER", "Job Finder <onboarding@resend.dev>")

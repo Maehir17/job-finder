@@ -56,12 +56,12 @@ def _age(date_posted: str) -> tuple[str, int]:
     return ("today" if days <= 0 else f"{days}d"), days
 
 
-def _send(subject: str, html: str, to: str) -> None:
-    if not config.RESEND_API_KEY:
-        raise RuntimeError("RESEND_API_KEY not set")
+def _send(subject: str, html: str, to: str, api_key: str) -> None:
+    if not api_key:
+        raise RuntimeError("Resend API key not set")
     r = requests.post(
         "https://api.resend.com/emails",
-        headers={"Authorization": f"Bearer {config.RESEND_API_KEY}"},
+        headers={"Authorization": f"Bearer {api_key}"},
         json={
             "from": config.SENDER,
             "to": [to],
@@ -109,7 +109,8 @@ def _row(j: Job) -> str:
 
 
 def send_digest(new_jobs: list[Job], to: str, hero_noun: str = "software",
-                subject_noun: str = "entry-level SWE") -> None:
+                subject_noun: str = "entry-level SWE",
+                api_key: str = "") -> None:
     # Freshest first; postings without a date sort to the bottom.
     jobs = sorted(new_jobs, key=lambda j: j.date_posted or "", reverse=True)
     n = len(jobs)
@@ -152,10 +153,11 @@ def send_digest(new_jobs: list[Job], to: str, hero_noun: str = "software",
     </td></tr>
   </table>
 </div>"""
-    _send(f"[Job Finder] {n} new {subject_noun} role{s}", html, to)
+    _send(f"[Job Finder] {n} new {subject_noun} role{s}", html, to, api_key)
 
 
-def send_bootstrap(count: int, to: str, subject_noun: str = "entry-level SWE") -> None:
+def send_bootstrap(count: int, to: str, subject_noun: str = "entry-level SWE",
+                   api_key: str = "") -> None:
     html = f"""\
 <div style="margin:0;padding:26px 14px;background:{_PAGE};font-family:{_FONT}">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto">
@@ -171,4 +173,4 @@ def send_bootstrap(count: int, to: str, subject_noun: str = "entry-level SWE") -
     </td></tr>
   </table>
 </div>"""
-    _send(f"[Job Finder] Tracking {count} roles, setup complete", html, to)
+    _send(f"[Job Finder] Tracking {count} roles, setup complete", html, to, api_key)

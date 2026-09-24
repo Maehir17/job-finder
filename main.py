@@ -79,19 +79,19 @@ def _run_profile(p, deduped) -> None:
     if config.DEMO:
         # Sample digest to preview the format; leaves state untouched.
         sample = sorted(relevant, key=lambda j: j.date_posted or "", reverse=True)[:12]
-        notify.send_digest(sample, p.to_email, p.hero_noun, p.subject_noun)
+        notify.send_digest(sample, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
         print(f"[{p.key}] DEMO: emailed {len(sample)} sample roles, state unchanged")
         return
 
     if storage.is_bootstrap(p.key):
         # First run: record everything silently so future roles trigger alerts.
         storage.save_seen(all_uids, p.key)
-        notify.send_bootstrap(len(all_uids), p.to_email, p.subject_noun)
+        notify.send_bootstrap(len(all_uids), p.to_email, p.subject_noun, p.resend_key)
         print(f"[{p.key}] bootstrap complete")
         return
 
     if new:
-        notify.send_digest(new, p.to_email, p.hero_noun, p.subject_noun)
+        notify.send_digest(new, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
         # Union so a posting that reappears isn't re-alerted.
         storage.save_seen(seen | all_uids, p.key)
         print(f"[{p.key}] emailed {len(new)} new roles")

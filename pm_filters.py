@@ -10,9 +10,9 @@ _PM_TITLE = re.compile(
     r"business operations|biz ops|business operations? (associate|analyst)|"
     r"strateg(y|ic)|corporate development|management consult(ant|ing)|"
     r"strategy (and|&) operations|"
-    # marketing family
+    # marketing family (content and social media intentionally excluded)
     r"marketing|brand|growth|communications|public relations|\bpr\b|"
-    r"social media|content|demand generation|\bseo\b|market research)\b",
+    r"demand generation|\bseo\b|market research)\b",
     re.I,
 )
 

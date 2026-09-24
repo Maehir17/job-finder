@@ -2,9 +2,14 @@ from dataclasses import dataclass
 from typing import Callable
 
 import config
+import jd
 from filters import is_recent, is_relevant, is_us
 from pm_filters import is_pm_relevant
 from sources.base import Job
+
+
+def _identity(jobs: list[Job]) -> list[Job]:
+    return jobs
 
 
 @dataclass
@@ -15,6 +20,8 @@ class Profile:
     subject_noun: str              # e.g. "entry-level SWE"
     matches: Callable[[Job], bool]
     resend_key: str                # Resend API key this profile sends with
+    # Second pass over the matched roles (e.g. JD checks that need the network).
+    verify: Callable[[list[Job]], list[Job]] = _identity
 
 
 def _swe_match(j: Job) -> bool:
@@ -39,5 +46,6 @@ def active_profiles() -> list[Profile]:
     if config.NOTIFY_EMAIL_PM:
         profiles.append(Profile("pm", config.NOTIFY_EMAIL_PM, "product, strategy & marketing",
                                 "product / strategy / marketing", _pm_match,
-                                config.RESEND_API_KEY_PM or config.RESEND_API_KEY))
+                                config.RESEND_API_KEY_PM or config.RESEND_API_KEY,
+                                verify=jd.keep_new_grad))
     return profiles

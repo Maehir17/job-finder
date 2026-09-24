@@ -23,6 +23,7 @@ def _fetch_one(slug: str) -> list[Job]:
                 category="ATS",
                 date_posted=(j.get("first_published") or j.get("updated_at") or "")[:10],
                 native_id=str(j.get("id", "")),
+                board=slug,
             )
         )
     return jobs

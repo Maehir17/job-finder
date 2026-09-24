@@ -71,6 +71,11 @@ def _resolve_links(jobs) -> None:
 
 def _run_profile(p, deduped) -> None:
     relevant = [j for j in deduped if p.matches(j)]
+    # Optional second pass (e.g. reading JDs to confirm new-grad intent).
+    before = len(relevant)
+    relevant = p.verify(relevant)
+    if len(relevant) != before:
+        print(f"[{p.key}] JD check dropped {before - len(relevant)}")
     print(f"[{p.key}] relevant after filtering: {len(relevant)}")
 
     all_uids = {j.uid for j in relevant}

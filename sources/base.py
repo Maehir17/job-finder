@@ -39,6 +39,8 @@ class Job:
     category: str = ""
     date_posted: str = ""
     native_id: str = ""
+    description: str = ""   # JD text when the source provides it cheaply
+    board: str = ""         # ATS board slug, for on-demand JD fetches
 
     @property
     def uid(self) -> str:

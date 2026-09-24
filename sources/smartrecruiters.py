@@ -44,6 +44,7 @@ def _to_job(j: dict, slug: str) -> Job | None:
         category="Software" if is_entry_sw else "ATS",
         date_posted=(j.get("releasedDate") or "")[:10],
         native_id=str(j.get("id", "")),
+        board=company,
     )
 
 

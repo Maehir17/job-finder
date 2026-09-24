@@ -47,6 +47,7 @@ def _fetch_query(what: str) -> list[Job]:
                     category="ATS",
                     date_posted=(j.get("created") or "")[:10],
                     native_id=str(j.get("id", "")),
+                    description=j.get("description", ""),
                 )
             )
     return jobs

@@ -50,8 +50,8 @@ _INTERN = re.compile(r"\b(intern|internship|co[\s-]?op|summer (analyst|associate
 # Non-full-time markers that disqualify a full-time role (intern handled apart).
 _NON_FT = re.compile(r"\b(part[\s-]?time|contract(or)?|temporary|seasonal|fellowship)\b", re.I)
 
-# New York + SF Bay Area (whole metro, not just SF). Applies to every recipient
-# (non-SWE) role, full-time and internship alike.
+# New York + SF Bay Area (whole metro, not just SF). Applies to every
+# non-SWE role, full-time and internship alike.
 _METRO = re.compile(
     r"\b(new york|nyc|new york city|manhattan|brooklyn|"
     r"san francisco|bay area|silicon valley|\bsf\b|"
@@ -121,7 +121,7 @@ def is_pm_relevant(job, max_age_days: int) -> bool:
         return False
     if not is_recent(job.date_posted, max_age_days):
         return False
-    # Every recipient (non-SWE) role must be in New York or the SF Bay Area,
+    # Every non-SWE role must be in New York or the SF Bay Area,
     # in the US (guards against e.g. "San Jose, Costa Rica").
     if not is_metro(job.location) or not is_us(job.location):
         return False

@@ -1,6 +1,6 @@
 import re
 
-from filters import is_recent
+from filters import is_recent, is_us
 
 # Product / project / program management, strategy, and marketing titles.
 _PM_TITLE = re.compile(
@@ -121,8 +121,9 @@ def is_pm_relevant(job, max_age_days: int) -> bool:
         return False
     if not is_recent(job.date_posted, max_age_days):
         return False
-    # Every recipient (non-SWE) role must be in New York or the SF Bay Area.
-    if not is_metro(job.location):
+    # Every recipient (non-SWE) role must be in New York or the SF Bay Area,
+    # in the US (guards against e.g. "San Jose, Costa Rica").
+    if not is_metro(job.location) or not is_us(job.location):
         return False
     if _INTERN.search(t):
         # Internships also limited to curated top companies.

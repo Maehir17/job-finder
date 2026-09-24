@@ -132,8 +132,9 @@ _NON_US = re.compile(
     r"south africa|nigeria|kenya|philippines|manila|indonesia|jakarta|"
     r"vietnam|hanoi|thailand|bangkok|malaysia|kuala lumpur|taiwan|taipei|"
     r"emea|apac|latam|romania|bucharest|ukraine|kyiv|czech|prague|hungary|"
-    r"budapest|greece|athens|turkey|istanbul|remote\s*[-,]?\s*(europe|uk|"
-    r"canada|india|apac|emea|latam))\b",
+    r"budapest|greece|athens|turkey|istanbul|"
+    r"costa rica|san jose, costa rica|guadalajara|monterrey|"
+    r"remote\s*[-,]?\s*(europe|uk|canada|india|apac|emea|latam))\b",
     re.I,
 )
 

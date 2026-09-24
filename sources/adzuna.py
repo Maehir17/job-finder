@@ -9,7 +9,7 @@ _APP_KEY = os.environ.get("ADZUNA_APP_KEY", "")
 _BASE = "https://api.adzuna.com/v1/api/jobs/us/search"
 _QUERIES = [
     "software engineer", "software developer", "data engineer",
-    "product manager", "program manager", "strategy",
+    "product manager", "program manager", "strategy", "marketing",
 ]
 _MAX_PAGES = 5
 _session = http()
@@ -59,3 +59,20 @@ def fetch() -> list[Job]:
     for q in _QUERIES:
         jobs.extend(_fetch_query(q))
     return jobs
+
+
+def resolve_url(url: str) -> str:
+    # Adzuna links go through their redirector; follow it to the real posting.
+    # Best-effort: keep the original URL if resolution fails.
+    if "adzuna" not in url:
+        return url
+    try:
+        r = _session.head(url, allow_redirects=True, timeout=15)
+        final = r.url
+        if "adzuna" in final:  # HEAD sometimes not followed; try GET
+            r = _session.get(url, allow_redirects=True, timeout=15, stream=True)
+            final = r.url
+            r.close()
+        return final or url
+    except Exception:
+        return url

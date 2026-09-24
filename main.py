@@ -61,6 +61,14 @@ def main() -> int:
     return 0
 
 
+def _resolve_links(jobs) -> None:
+    # Replace Adzuna redirector links with the real posting URL, for the small
+    # set of jobs actually being emailed.
+    for j in jobs:
+        if j.source == "Adzuna":
+            j.url = adzuna.resolve_url(j.url)
+
+
 def _run_profile(p, deduped) -> None:
     relevant = [j for j in deduped if p.matches(j)]
     print(f"[{p.key}] relevant after filtering: {len(relevant)}")
@@ -79,6 +87,7 @@ def _run_profile(p, deduped) -> None:
     if config.DEMO:
         # Sample digest to preview the format; leaves state untouched.
         sample = sorted(relevant, key=lambda j: j.date_posted or "", reverse=True)[:12]
+        _resolve_links(sample)
         notify.send_digest(sample, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
         print(f"[{p.key}] DEMO: emailed {len(sample)} sample roles, state unchanged")
         return
@@ -91,6 +100,7 @@ def _run_profile(p, deduped) -> None:
         return
 
     if new:
+        _resolve_links(new)
         notify.send_digest(new, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
         # Union so a posting that reappears isn't re-alerted.
         storage.save_seen(seen | all_uids, p.key)

@@ -48,7 +48,9 @@ _NON_SOFTWARE = re.compile(
     r"water resources|process|production|controls|guidance|navigation|"
     r"mining|petroleum|drilling|welding|piping|hvac|"
     r"construction|mechatronic|human factors|consultant|acoustic|"
-    r"metallurg|geospatial|surveying)\b",
+    r"metallurg|geospatial|surveying|"
+    r"facilities|maintenance|laser|broadcast|project engineer|"
+    r"product engineer|marketing|brand)\b",
     re.I,
 )
 
@@ -57,6 +59,11 @@ ALLOWED_CATEGORIES = {
     "Software", "Software Engineering", "AI/ML/Data", "Quant",
     "Data Science, AI & Machine Learning", "ATS",
 }
+
+
+def is_software_title(title: str) -> bool:
+    t = title or ""
+    return bool(_SOFTWARE.search(t)) and not _NON_SOFTWARE.search(t)
 
 
 def is_relevant(title: str, category: str, from_ats: bool) -> bool:

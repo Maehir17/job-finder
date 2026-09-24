@@ -37,7 +37,7 @@ def active_profiles() -> list[Profile]:
         profiles.append(Profile("swe", config.NOTIFY_EMAIL, "software", "entry-level SWE",
                                 _swe_match, config.RESEND_API_KEY))
     if config.NOTIFY_EMAIL_PM:
-        profiles.append(Profile("pm", config.NOTIFY_EMAIL_PM, "product & strategy",
-                                "product / strategy", _pm_match,
+        profiles.append(Profile("pm", config.NOTIFY_EMAIL_PM, "product, strategy & marketing",
+                                "product / strategy / marketing", _pm_match,
                                 config.RESEND_API_KEY_PM or config.RESEND_API_KEY))
     return profiles

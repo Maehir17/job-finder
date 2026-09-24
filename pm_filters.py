@@ -1,26 +1,30 @@
 import re
 
-from filters import is_recent, is_us
+from filters import is_recent
 
-# Product / project / program management and strategy titles.
+# Product / project / program management, strategy, and marketing titles.
 _PM_TITLE = re.compile(
     r"\b(product manager|product management|associate product manager|\bapm\b|"
     r"product owner|program manager|program management|project manager|"
     r"project management|technical program manager|\btpm\b|chief of staff|"
     r"business operations|biz ops|business operations? (associate|analyst)|"
     r"strateg(y|ic)|corporate development|management consult(ant|ing)|"
-    r"strategy (and|&) operations)\b",
+    r"strategy (and|&) operations|"
+    # marketing family
+    r"marketing|brand|growth|communications|public relations|\bpr\b|"
+    r"social media|content|demand generation|\bseo\b|market research)\b",
     re.I,
 )
 
 # Adjacent-but-not-wanted roles that can share a keyword (e.g. "manager").
 _PM_EXCLUDE = re.compile(
-    r"\b(marketing|sales|account executive|account manager|engineer|engineering|"
-    r"software|developer|community|social media|customer success|customer support|"
+    r"\b(sales|account executive|account manager|engineer|engineering|"
+    r"software|developer|customer success|customer support|"
     r"recruit(er|ing)?|talent|human resources|\bhr\b|payroll|benefits|"
     r"accounting|controller|office manager|facilities|clinical|nurse|"
-    r"construction|warehouse|store manager|retail|brand manager|content|"
-    r"product designer|design|data scientist|analytics engineer|qa|quality)\b",
+    r"construction|warehouse|store manager|retail|"
+    r"product designer|graphic design|\bdesigner\b|data scientist|"
+    r"analytics engineer|\bqa\b|quality assurance)\b",
     re.I,
 )
 
@@ -38,7 +42,7 @@ _PM_ENTRY = re.compile(
     r"\b(associate|analyst|\bapm\b|new[\s-]?grad(uate)?|entry[\s-]?level|"
     r"early[\s-]?career|rotational|university (grad|hire|program)?|campus|"
     r"recent grad(uate)?|junior|jr\.?|coordinator|college grad(uate)?|"
-    r"new college grad)\b",
+    r"new college grad|specialist|assistant)\b",
     re.I,
 )
 
@@ -46,15 +50,15 @@ _INTERN = re.compile(r"\b(intern|internship|co[\s-]?op|summer (analyst|associate
 # Non-full-time markers that disqualify a full-time role (intern handled apart).
 _NON_FT = re.compile(r"\b(part[\s-]?time|contract(or)?|temporary|seasonal|fellowship)\b", re.I)
 
-# NYC + SF Bay Area (whole metro, not just SF) + Chicago.
+# New York + SF Bay Area (whole metro, not just SF). Applies to every recipient
+# (non-SWE) role, full-time and internship alike.
 _METRO = re.compile(
     r"\b(new york|nyc|new york city|manhattan|brooklyn|"
     r"san francisco|bay area|silicon valley|\bsf\b|"
     r"san jose|oakland|berkeley|palo alto|mountain view|menlo park|sunnyvale|"
     r"santa clara|cupertino|redwood city|san mateo|foster city|milpitas|"
     r"south san francisco|emeryville|fremont|san bruno|burlingame|campbell|"
-    r"los gatos|san carlos|belmont|hayward|alameda|newark, ca|"
-    r"chicago)\b",
+    r"los gatos|san carlos|belmont|hayward|alameda|newark, ca)\b",
     re.I,
 )
 
@@ -117,14 +121,15 @@ def is_pm_relevant(job, max_age_days: int) -> bool:
         return False
     if not is_recent(job.date_posted, max_age_days):
         return False
+    # Every recipient (non-SWE) role must be in New York or the SF Bay Area.
+    if not is_metro(job.location):
+        return False
     if _INTERN.search(t):
-        # Internships: only good companies in NYC / SF Bay Area / Chicago.
-        return is_metro(job.location) and is_good_company(job.company)
-    # Full-time: entry-level, US-based, and genuinely full-time.
+        # Internships also limited to curated top companies.
+        return is_good_company(job.company)
+    # Full-time: entry-level and genuinely full-time.
     if _NON_FT.search(t):
         return False
     if _PM_SENIOR.search(t):
         return False
-    if not _PM_ENTRY.search(t):
-        return False
-    return is_us(job.location)
+    return bool(_PM_ENTRY.search(t))

@@ -12,7 +12,7 @@ active only when its recipient is set (see `profiles.py`).
 | Profile | Roles | Locations | Recipient secret |
 |---|---|---|---|
 | `swe` | Full-time entry-level software and adjacent | US | `NOTIFY_EMAIL` |
-| `pm` | Full-time entry-level product / project / strategy, plus internships at curated "good companies" | Full-time: US. Internships: NYC, SF Bay Area, Chicago | `NOTIFY_EMAIL_PM` |
+| `pm` | Entry-level product / project / strategy / marketing (full-time, JD-verified new-grad) plus internships at selected companies | New York, SF Bay Area (US) | `NOTIFY_EMAIL_PM` |
 
 ## Sources
 
@@ -57,8 +57,8 @@ This fetches, filters, and prints results without sending email or writing state
 ## Tuning
 
 - Which software roles match: edit the regexes in `filters.py`.
-- Which product/strategy roles match, the metros, and the "good companies" list:
-  edit `pm_filters.py`.
+- Which product/strategy/marketing roles match, the metros, and the internship
+  company list: edit `pm_filters.py`.
 - Which companies' boards are polled: add or remove slugs in `companies.py`.
 - Add or change a tracker: edit `profiles.py`.
 - Frequency: change the `cron` in `.github/workflows/job-finder.yml`.

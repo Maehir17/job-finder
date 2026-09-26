@@ -1,6 +1,9 @@
 import os
+import re
 
 from .base import Job, http
+
+_APPLY_URL = re.compile(r'data-apply-url="([^"]+)"')
 
 # Adzuna aggregates listings from many boards. Free tier needs an app id + key.
 # Dormant until both are set. country=us keeps results US-based.
@@ -64,16 +67,18 @@ def fetch() -> list[Job]:
 
 def resolve_url(url: str) -> str:
     # Adzuna links go through their redirector; follow it to the real posting.
+    # It sometimes lands on aiapply.co (another aggregator), which carries the
+    # true employer link in a data-apply-url attribute, so unwrap that too.
     # Best-effort: keep the original URL if resolution fails.
     if "adzuna" not in url:
         return url
     try:
-        r = _session.head(url, allow_redirects=True, timeout=15)
-        final = r.url
-        if "adzuna" in final:  # HEAD sometimes not followed; try GET
-            r = _session.get(url, allow_redirects=True, timeout=15, stream=True)
-            final = r.url
-            r.close()
-        return final or url
+        r = _session.get(url, allow_redirects=True, timeout=20)
+        final = r.url or url
+        if "aiapply.co" in final:
+            m = _APPLY_URL.search(r.text)
+            if m:
+                return m.group(1)
+        return final
     except Exception:
         return url

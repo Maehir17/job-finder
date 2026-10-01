@@ -37,6 +37,7 @@ Adzuna:a6303b321161733b
 Adzuna:aa059e10e21a5b3f
 Adzuna:aea538d92e329f47
 Adzuna:b01326d3569d2633
+Adzuna:b518c1f364133101
 Adzuna:b7769ded5aefb62d
 Adzuna:bb6e7ac413a1a664
 Adzuna:c17670398b1cf74d
@@ -668,6 +669,7 @@ Simplify:16e94e07d9487811
 Simplify:1700a51bf966b2ca
 Simplify:1700ae5bfcb5adf1
 Simplify:172a35f9d4fac27f
+Simplify:1761ce78a65f2688
 Simplify:1782f17c2d0ceea8
 Simplify:17ab6eafa9051322
 Simplify:17c4602adb55da23
@@ -1476,6 +1478,7 @@ Simplify:86376639b791dcd2
 Simplify:8681a1e5bb587f96
 Simplify:86bc45f926dfa79b
 Simplify:86be775a399b315f
+Simplify:86edd950b8354ef6
 Simplify:871ac705e11757d8
 Simplify:87242490908d1951
 Simplify:875742576e31c4bc
@@ -1657,6 +1660,7 @@ Simplify:9d0ea77066e375c7
 Simplify:9d362e2a066839e1
 Simplify:9d466206de7b38db
 Simplify:9d5071ce29c90102
+Simplify:9d57676df54e2f34
 Simplify:9d9bf3102ee09c57
 Simplify:9da574124151ec0c
 Simplify:9dac350b9950c22e
@@ -1929,6 +1933,7 @@ Simplify:c1a12726ef7eac3a
 Simplify:c1b953a445a6d749
 Simplify:c1bb423b2776cc2c
 Simplify:c1e610c356dacbb3
+Simplify:c20b05c15762a305
 Simplify:c20b9e3ee9ad4d17
 Simplify:c22c245f7649c758
 Simplify:c237903d68193342
@@ -2189,6 +2194,7 @@ Simplify:e6f55e449e8ad3f2
 Simplify:e73f082e0885ce18
 Simplify:e74e0ecab40058de
 Simplify:e75ac49ff9154195
+Simplify:e76e1cc43186a150
 Simplify:e77a8689aec76924
 Simplify:e7be32b114d99fce
 Simplify:e7ddea879f3d09e9

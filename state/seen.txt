@@ -2,6 +2,8 @@ Adzuna:0298b1da2255cad8
 Adzuna:0378157f026087f5
 Adzuna:064b3f55010122e1
 Adzuna:09d5d7c0b56d917e
+Adzuna:0ec1606e2a301551
+Adzuna:129154f054685734
 Adzuna:134ebdaf76315349
 Adzuna:1526eacca13c33bd
 Adzuna:17db91ad0bb0206d
@@ -66,11 +68,14 @@ Adzuna:bd0038a42ea63b8f
 Adzuna:bfe96b46dea8b213
 Adzuna:c17670398b1cf74d
 Adzuna:c69c2dc529bbb322
+Adzuna:c6d1a439687946b0
+Adzuna:ce68b54a9cdb9b37
 Adzuna:cf6d3f2308ce9864
 Adzuna:d20d37cf65d40dc9
 Adzuna:d74413f3a9535440
 Adzuna:d8c4535598f4a1cb
 Adzuna:db2ff85bf7bde37c
+Adzuna:df261b1445810b84
 Adzuna:e066e3417d1a1e49
 Adzuna:e06bcfef30c2d6e0
 Adzuna:e55f5634c07cc5c0
@@ -418,6 +423,7 @@ Greenhouse:cb6d254de79e3b69
 Greenhouse:cbcf329a378cdd63
 Greenhouse:cc1b0cab69b46e20
 Greenhouse:ce65940b98a9c584
+Greenhouse:cee81658130be67a
 Greenhouse:cef138fd929a1ca3
 Greenhouse:d00ff3ccdb9af23e
 Greenhouse:d067f83fbc8c1467
@@ -1419,6 +1425,7 @@ Simplify:6b8ff58f8cf563fe
 Simplify:6b95d35e32502da7
 Simplify:6b9c7d4fb8429d3c
 Simplify:6b9ea7aca05f66f7
+Simplify:6ba104d5e82bc722
 Simplify:6bc710297ce0a3da
 Simplify:6bce9b582d7611a1
 Simplify:6bf6bc2f843a927c

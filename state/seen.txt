@@ -528,6 +528,7 @@ Lever:4a3ba1289d881cb0
 Lever:4b0bc93f49d62337
 Lever:50043e86f49f9a7f
 Lever:50438a65c2c3c3e7
+Lever:50798e54d6e894f3
 Lever:50c0f4a15c5bdcb3
 Lever:517681a1085de304
 Lever:52e9cc521aabb19b
@@ -1212,6 +1213,7 @@ Simplify:50d3d1ffb420efc6
 Simplify:50e020813cc38b3b
 Simplify:512b2baf0358f822
 Simplify:5133acc4afffb958
+Simplify:513b07600ed43d99
 Simplify:515a5760769ec9a2
 Simplify:515c8e5b6266f6f5
 Simplify:5161ea656436e349
@@ -1979,6 +1981,7 @@ Simplify:adaa4710ad6b1a25
 Simplify:addf2dbfaaa71cbc
 Simplify:ade068e880a887c3
 Simplify:ade636bd527e9967
+Simplify:ae24a3a75ad8aac0
 Simplify:ae31a15557d9cad3
 Simplify:ae3ebd5236500115
 Simplify:ae43879da45ac347
@@ -2214,6 +2217,7 @@ Simplify:c5d077c7a12775ee
 Simplify:c6043758c09ac9e0
 Simplify:c621dd21fb2aa28f
 Simplify:c6534e28b790467b
+Simplify:c675bfd5235a142a
 Simplify:c68d58423e2dc125
 Simplify:c6abce510c557f7a
 Simplify:c6b1f1dd2ee79105
@@ -2279,6 +2283,7 @@ Simplify:cdb0dd7357736b1b
 Simplify:ce06039205b82221
 Simplify:ce08ea6ad193e7b6
 Simplify:ce26cce0a8994304
+Simplify:ce58f39162cf0f88
 Simplify:ce60d70dea8ca15b
 Simplify:cea1c794814945f1
 Simplify:ceb8814b6582642c

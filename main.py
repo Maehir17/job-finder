@@ -84,6 +84,9 @@ def _run_profile(p, deduped) -> None:
     seen = storage.load_seen(p.key)
     new = [j for j in relevant if j.uid not in seen]
     print(f"[{p.key}] new since last run: {len(new)}")
+    from collections import Counter
+    print(f"[{p.key}] relevant by source: {dict(Counter(j.source for j in relevant))}")
+    print(f"[{p.key}] new by source: {dict(Counter(j.source for j in new))}")
 
     if config.DRY_RUN:
         for j in new[:40]:

@@ -79,10 +79,8 @@ def is_relevant(title: str, category: str, from_ats: bool) -> bool:
         return False
     if not _SOFTWARE.search(t):
         return False
-    if from_ats:
-        # Raw ATS boards list every level, so require an entry-level signal too.
-        if not _ENTRY.search(t):
-            return False
+    # Seniority is already excluded above; keep any remaining software-titled
+    # role regardless of an explicit entry-level keyword (from_ats unused now).
     return True
 
 

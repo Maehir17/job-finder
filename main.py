@@ -7,16 +7,20 @@ from profiles import active_profiles
 from sources import (
     adzuna,
     ashby,
+    breezy,
     careers,
     community,
     greenhouse,
     lever,
+    recruitee,
     remoteok,
     remotive,
     smartrecruiters,
     themuse,
     usajobs,
     weworkremotely,
+    workable,
+    workday,
 )
 
 SOURCES = [
@@ -25,6 +29,10 @@ SOURCES = [
     ("lever", lever.fetch),
     ("ashby", ashby.fetch),
     ("smartrecruiters", smartrecruiters.fetch),
+    ("workday", workday.fetch),
+    ("workable", workable.fetch),
+    ("recruitee", recruitee.fetch),
+    ("breezy", breezy.fetch),
     ("careers", careers.fetch),
     ("remoteok", remoteok.fetch),
     ("remotive", remotive.fetch),

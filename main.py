@@ -7,6 +7,7 @@ from profiles import active_profiles
 from sources import (
     adzuna,
     ashby,
+    careers,
     community,
     greenhouse,
     lever,
@@ -24,6 +25,7 @@ SOURCES = [
     ("lever", lever.fetch),
     ("ashby", ashby.fetch),
     ("smartrecruiters", smartrecruiters.fetch),
+    ("careers", careers.fetch),
     ("remoteok", remoteok.fetch),
     ("remotive", remotive.fetch),
     ("themuse", themuse.fetch),

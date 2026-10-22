@@ -1039,3 +1039,12 @@ RECRUITEE = [
 BREEZY = [
     "forge-nano", "jnd-inc", "north-wind-group", "nucleusteq", "pyrovio",
 ]
+
+# S&P 500 members found + verified on these ATS (added after coverage audit).
+_SP500_GREENHOUSE = ["block", "carvana", "datadog", "godaddy", "verisign"]
+GREENHOUSE += [c for c in _SP500_GREENHOUSE if c not in GREENHOUSE]
+_SP500_SMARTRECRUITERS = [
+    "camdenpropertytrust", "expeditors", "henryschein", "kenvue",
+    "kimberlyclark", "southwest", "uber", "wynnresorts",
+]
+SMARTRECRUITERS += [c for c in _SP500_SMARTRECRUITERS if c not in SMARTRECRUITERS]

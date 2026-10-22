@@ -191,7 +191,11 @@ Greenhouse:ed075254275ca9c7
 Greenhouse:f957e699c4e63f48
 Greenhouse:fefaa92742f03a8f
 Greenhouse:ff1a14db45c4c18b
+Lever:1901e36e85bee282
 Lever:23add5611f00f3c5
+Lever:2f1e74323740ec28
+Lever:41d51a52aa7d18b4
+Lever:477900f8695dcbb6
 Lever:54d65e08f392f096
 Lever:7ad8d3bccc41e49b
 Lever:a0f480dbb663a75f
@@ -199,6 +203,7 @@ Lever:afd0c531f60d6922
 Lever:b79f474c48bd8c62
 Lever:bb12fcd261a0588c
 Lever:bccd4f47abf1b460
+Lever:c3ae1f04d2d37804
 Lever:d1ff5ac6e9502bdd
 Simplify:09587296900dad1d
 Simplify:0971af527ddb7bac

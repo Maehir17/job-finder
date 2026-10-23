@@ -55,7 +55,9 @@ _NON_SOFTWARE = re.compile(
     r"semiconductor|lithograph|\beuv\b|\bxev\b|interconnection|relocation|"
     r"photonic|refrigeration|turbine|battery|optics|supplier|install|"
     r"power platform|design release|dynamic studies|new model|"
-    r"calibration|tooling|plant|equipment)\b",
+    r"calibration|tooling|plant|equipment|"
+    r"owner|executive|advisor|advisory|strategist|utilities|utility|"
+    r"partner|account manager|program manager|project manager)\b",
     re.I,
 )
 

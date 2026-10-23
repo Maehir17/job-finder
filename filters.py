@@ -41,7 +41,7 @@ _SOFTWARE = re.compile(
 _NON_SOFTWARE = re.compile(
     r"\b(mechanical|electrical|civil|chemical|biomedical|industrial|aerospace|"
     r"materials|structural|environmental|manufacturing|optical|hardware|"
-    r"sales|customer|field|solutions|network|test|validation|firmware|"
+    r"sales|customer|field|solutions|network|test|validation|firmware|embedded|"
     r"nuclear|brake|suspension|water|wastewater|rail|fluids|vehicle|"
     r"mechanisms|launch|propulsion|thermal|avionics|antenna|packaging|"
     r"formulations|characterization|geotechnical|traffic|transportation|"

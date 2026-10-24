@@ -1,8 +1,10 @@
 import sys
+from datetime import datetime, timezone
 
 import config
 import notify
 import storage
+from filters import age_days
 from profiles import active_profiles
 from sources import (
     adzuna,
@@ -118,18 +120,30 @@ def _run_profile(p, deduped) -> None:
         print(f"[{p.key}] bootstrap complete")
         return
 
-    if new:
-        to_send = p.email_filter(new)
-        if len(to_send) != len(new):
-            print(f"[{p.key}] JD check dropped {len(new) - len(to_send)} of {len(new)} new")
-        _resolve_links(to_send)
-        if to_send:
-            notify.send_digest(to_send, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
-        # Mark all new as seen (even JD-dropped) so they aren't re-checked.
-        storage.save_seen(seen | all_uids, p.key)
-        print(f"[{p.key}] emailed {len(to_send)} new roles")
-    else:
+    if not new:
         print(f"[{p.key}] nothing new")
+        return
+
+    # Fresh roles (posted today/yesterday) go out immediately; anything older
+    # is batched and only sent on the hourly flush, so you don't get a trickle
+    # of tiny emails for non-urgent roles.
+    fresh = [j for j in new if (age_days(j.date_posted) or 99) <= 1]
+    older = [j for j in new if (age_days(j.date_posted) or 99) > 1]
+    flush = datetime.now(timezone.utc).minute < 15  # once per hour
+
+    batch = fresh + (older if flush else [])
+    to_send = p.email_filter(batch)
+    _resolve_links(to_send)
+    if to_send:
+        notify.send_digest(to_send, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
+
+    # Mark fresh seen now; older only once flushed, so unflushed older roles
+    # stay unseen and accumulate into the next hourly batch.
+    handled = {j.uid for j in fresh}
+    if flush:
+        handled |= {j.uid for j in older}
+    storage.save_seen(seen | handled, p.key)
+    print(f"[{p.key}] sent {len(to_send)} (fresh {len(fresh)}, older {len(older)}, flush={flush})")
 
 
 if __name__ == "__main__":

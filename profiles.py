@@ -20,8 +20,11 @@ class Profile:
     subject_noun: str              # e.g. "entry-level SWE"
     matches: Callable[[Job], bool]
     resend_key: str                # Resend API key this profile sends with
-    # Second pass over the matched roles (e.g. JD checks that need the network).
+    # Second pass over all matched roles (e.g. JD checks that need the network).
     verify: Callable[[list[Job]], list[Job]] = _identity
+    # Final pass over only the new roles about to be emailed (keeps costly JD
+    # reads bounded to a small set).
+    email_filter: Callable[[list[Job]], list[Job]] = _identity
 
 
 def _swe_match(j: Job) -> bool:
@@ -42,7 +45,8 @@ def active_profiles() -> list[Profile]:
     profiles = []
     if config.NOTIFY_EMAIL:
         profiles.append(Profile("swe", config.NOTIFY_EMAIL, "software", "entry-level SWE",
-                                _swe_match, config.RESEND_API_KEY))
+                                _swe_match, config.RESEND_API_KEY,
+                                email_filter=jd.keep_software))
     if config.NOTIFY_EMAIL_PM:
         profiles.append(Profile("pm", config.NOTIFY_EMAIL_PM, "product, strategy & marketing",
                                 "product / strategy / marketing", _pm_match,

@@ -104,7 +104,8 @@ def _run_profile(p, deduped) -> None:
 
     if config.DEMO:
         # Sample digest to preview the format; leaves state untouched.
-        sample = sorted(relevant, key=lambda j: j.date_posted or "", reverse=True)[:12]
+        sample = sorted(relevant, key=lambda j: j.date_posted or "", reverse=True)[:20]
+        sample = p.email_filter(sample)[:12]
         _resolve_links(sample)
         notify.send_digest(sample, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
         print(f"[{p.key}] DEMO: emailed {len(sample)} sample roles, state unchanged")
@@ -118,11 +119,15 @@ def _run_profile(p, deduped) -> None:
         return
 
     if new:
-        _resolve_links(new)
-        notify.send_digest(new, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
-        # Union so a posting that reappears isn't re-alerted.
+        to_send = p.email_filter(new)
+        if len(to_send) != len(new):
+            print(f"[{p.key}] JD check dropped {len(new) - len(to_send)} of {len(new)} new")
+        _resolve_links(to_send)
+        if to_send:
+            notify.send_digest(to_send, p.to_email, p.hero_noun, p.subject_noun, p.resend_key)
+        # Mark all new as seen (even JD-dropped) so they aren't re-checked.
         storage.save_seen(seen | all_uids, p.key)
-        print(f"[{p.key}] emailed {len(new)} new roles")
+        print(f"[{p.key}] emailed {len(to_send)} new roles")
     else:
         print(f"[{p.key}] nothing new")
 

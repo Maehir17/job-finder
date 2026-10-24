@@ -113,6 +113,26 @@ def is_good_company(company: str) -> bool:
     return bool(_GOOD_RE.search(company or ""))
 
 
+# Consulting / IT-services firms are fine for the PM tracker, but on the SWE
+# side they flood with staffing roles ("Databricks Data Engineer" at Deloitte),
+# so they don't earn the good-company age pass.
+_SWE_NOT_GOOD = {
+    "mckinsey", "bain", "boston consulting group", "bcg", "deloitte", "pwc",
+    "ernst & young", "kpmg", "accenture", "oliver wyman", "kearney",
+    "zs associates", "booz allen", "capgemini",
+}
+_SWE_GOOD_RE = re.compile(
+    r"\b(" + "|".join(sorted(
+        (re.escape(c) for c in (GOOD_COMPANIES - _SWE_NOT_GOOD)), key=len, reverse=True
+    )) + r")\b",
+    re.I,
+)
+
+
+def is_swe_good_company(company: str) -> bool:
+    return bool(_SWE_GOOD_RE.search(company or ""))
+
+
 def is_pm_relevant(job, max_age_days: int) -> bool:
     t = job.title or ""
     if not _PM_TITLE.search(t):

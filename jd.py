@@ -72,6 +72,22 @@ def is_software_jd(text: str) -> bool:
     return True
 
 
+# Government / defense roles that require a clearance or US citizenship.
+_CLEARANCE_JD = re.compile(
+    r"\b(security clearance|active .{0,15}clearance|ts/sci|top secret|"
+    r"secret clearance|polygraph|dod clearance|government clearance|ssbi|"
+    r"ability to obtain .{0,20}clearance|eligible .{0,20}clearance|"
+    r"must be a (u\.?s\.?|united states) citizen|"
+    r"u\.?s\.? citizenship (is )?required|citizenship is required|"
+    r"\bitar\b|export[\s-]control)\b",
+    re.I,
+)
+
+
+def needs_clearance(text: str) -> bool:
+    return bool(text) and bool(_CLEARANCE_JD.search(text))
+
+
 def _fetch_description(job: Job) -> str:
     if job.description:
         return job.description
@@ -110,10 +126,13 @@ def keep_new_grad(jobs: list[Job], workers: int = 12) -> list[Job]:
 
 
 def keep_software(jobs: list[Job], workers: int = 12) -> list[Job]:
-    # Read each JD and drop roles whose description reads as clearly
-    # non-software (hardware, electrical, mechanical) despite the title.
+    # Read each JD and drop roles that read as clearly non-software (hardware,
+    # electrical, mechanical) or that require a clearance / US citizenship.
     if not jobs:
         return jobs
     with cf.ThreadPoolExecutor(max_workers=workers) as ex:
         texts = list(ex.map(_fetch_description, jobs))
-    return [j for j, t in zip(jobs, texts) if is_software_jd(t)]
+    return [
+        j for j, t in zip(jobs, texts)
+        if is_software_jd(t) and not needs_clearance(t)
+    ]

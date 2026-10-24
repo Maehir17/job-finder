@@ -67,6 +67,13 @@ ALLOWED_CATEGORIES = {
     "Data Science, AI & Machine Learning", "ATS",
 }
 
+# Clearance / defense signals in a title.
+_CLEARANCE = re.compile(
+    r"\b(clearance|cleared|ts/sci|top secret|secret clearance|polygraph|"
+    r"security clearance|ssbi)\b",
+    re.I,
+)
+
 
 def is_software_title(title: str) -> bool:
     t = title or ""
@@ -78,6 +85,8 @@ def is_relevant(title: str, category: str, from_ats: bool) -> bool:
     if _NOT_FULLTIME.search(t):
         return False
     if _SENIOR.search(t):
+        return False
+    if _CLEARANCE.search(t):
         return False
     if category and category not in ALLOWED_CATEGORIES:
         return False

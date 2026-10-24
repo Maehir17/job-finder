@@ -3,8 +3,8 @@ from typing import Callable
 
 import config
 import jd
-from filters import is_recent, is_relevant, is_us
-from pm_filters import is_pm_relevant
+from filters import age_days, is_recent, is_relevant, is_us
+from pm_filters import is_good_company, is_pm_relevant
 from sources.base import Job
 
 
@@ -27,11 +27,21 @@ class Profile:
     email_filter: Callable[[list[Job]], list[Job]] = _identity
 
 
+def _swe_recent(j: Job) -> bool:
+    # Default cutoff is RECENT_DAYS; good companies get the wider MAX_AGE_DAYS.
+    age = age_days(j.date_posted)
+    if age is None:
+        return False
+    if age <= config.RECENT_DAYS:
+        return True
+    return age <= config.MAX_AGE_DAYS and is_good_company(j.company)
+
+
 def _swe_match(j: Job) -> bool:
     return (
         is_relevant(j.title, j.category, from_ats=(j.category == "ATS"))
         and is_us(j.location)
-        and is_recent(j.date_posted, config.MAX_AGE_DAYS)
+        and _swe_recent(j)
     )
 
 

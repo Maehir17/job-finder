@@ -75,6 +75,14 @@ _CLEARANCE = re.compile(
 )
 
 
+def age_days(date_posted: str):
+    try:
+        d = datetime.strptime(date_posted[:10], "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        return None
+    return (datetime.now(timezone.utc).date() - d).days
+
+
 def is_software_title(title: str) -> bool:
     t = title or ""
     return bool(_SOFTWARE.search(t)) and not _NON_SOFTWARE.search(t)

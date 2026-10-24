@@ -27,6 +27,9 @@ DEMO = os.environ.get("DEMO", "").lower() in ("1", "true", "yes")
 # Drop postings older than this many days.
 MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "30"))
 
+# Tighter default cutoff; good companies are allowed up to MAX_AGE_DAYS.
+RECENT_DAYS = int(os.environ.get("RECENT_DAYS", "5"))
+
 # Optional source API keys. Each source stays dormant until its keys are set.
 USAJOBS_KEY = os.environ.get("USAJOBS_KEY", "")
 USAJOBS_EMAIL = os.environ.get("USAJOBS_EMAIL", "")

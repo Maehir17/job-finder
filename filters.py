@@ -28,14 +28,33 @@ _ENTRY = re.compile(
     re.I,
 )
 
-# Software / adjacent role signal.
-_SOFTWARE = re.compile(
-    r"\b(software|engineer|developer|programmer|sde|swe|data (scientist|engineer|analyst)|"
-    r"machine learning|\bml\b|\bai\b|backend|back[\s-]?end|frontend|front[\s-]?end|"
-    r"full[\s-]?stack|devops|\bsre\b|platform|infrastructure|quant|"
-    r"applied scientist|research engineer)\b",
+# Roles that are software on their own, no context word needed.
+_SW_SELF = re.compile(
+    r"\b(software engineer|software developer|software development engineer|"
+    r"\bswe\b|\bsde\b|\bsdet\b|\bprogrammer\b|web developer|"
+    r"full[\s-]?stack developer|game developer|mobile developer|"
+    r"android developer|ios developer|application security|appsec|"
+    r"applied scientist)\b",
     re.I,
 )
+
+# Role nouns that count as software only with a software context word.
+_SW_ROLE = re.compile(r"\b(engineer|developer|scientist|programmer)\b", re.I)
+
+# Software context words.
+_SW_SIGNAL = re.compile(
+    r"\b(software|back[\s-]?end|front[\s-]?end|full[\s-]?stack|web|mobile|"
+    r"ios|android|cloud|platform|infrastructure|distributed|\bapi\b|devops|"
+    r"site reliability|\bsre\b|\bml\b|machine learning|\bai\b|data|analytics|"
+    r"security|cyber|game|graphics|blockchain|"
+    r"java|python|javascript|typescript|golang|ruby|\.net|c\+\+|c#|php|"
+    r"salesforce|servicenow|kubernetes|react|node)\b",
+    re.I,
+)
+
+# "developer" on its own implies software, unless it's a non-software kind.
+_DEV = re.compile(r"\bdeveloper\b", re.I)
+_DEV_NOT = re.compile(r"\b(business|real estate|land|learning|people|org)\b", re.I)
 
 # Engineering titles that are NOT software.
 _NON_SOFTWARE = re.compile(
@@ -85,7 +104,13 @@ def age_days(date_posted: str):
 
 def is_software_title(title: str) -> bool:
     t = title or ""
-    return bool(_SOFTWARE.search(t)) and not _NON_SOFTWARE.search(t)
+    if _NON_SOFTWARE.search(t):
+        return False
+    if _SW_SELF.search(t):
+        return True
+    if _DEV.search(t) and not _DEV_NOT.search(t):
+        return True
+    return bool(_SW_ROLE.search(t) and _SW_SIGNAL.search(t))
 
 
 def is_relevant(title: str, category: str, from_ats: bool) -> bool:
@@ -98,14 +123,8 @@ def is_relevant(title: str, category: str, from_ats: bool) -> bool:
         return False
     if category and category not in ALLOWED_CATEGORIES:
         return False
-    # Applies to every source: curated feeds also carry mislabeled non-eng roles.
-    if _NON_SOFTWARE.search(t):
-        return False
-    if not _SOFTWARE.search(t):
-        return False
-    # Seniority is already excluded above; keep any remaining software-titled
-    # role regardless of an explicit entry-level keyword (from_ats unused now).
-    return True
+    # The title must name a real software role (allowlist), not just "engineer".
+    return is_software_title(t)
 
 
 # US state names, checked case-insensitively.

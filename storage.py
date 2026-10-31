@@ -7,7 +7,9 @@ _DIR = Path(__file__).parent / "state"
 
 
 def _path(key: str) -> Path:
-    name = "seen" if key == "swe" else f"seen_{key}"
+    # "v2" because role ids are now content-based; this re-bootstraps cleanly
+    # instead of re-alerting every role under the old id scheme.
+    name = "seen_v2" if key == "swe" else f"seen_v2_{key}"
     return _DIR / f"{name}.txt"
 
 

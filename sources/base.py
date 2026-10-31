@@ -1,8 +1,11 @@
 import concurrent.futures as cf
 import hashlib
+import re
 from dataclasses import dataclass
 
 import requests
+
+_NORM = re.compile(r"[^a-z0-9]")
 
 _UA = "job-finder/1.0 (+https://github.com)"
 
@@ -44,6 +47,9 @@ class Job:
 
     @property
     def uid(self) -> str:
-        # Prefer the source's own id; otherwise hash the URL.
-        key = self.native_id or self.url or f"{self.company}|{self.title}"
-        return f"{self.source}:{hashlib.sha1(key.encode()).hexdigest()[:16]}"
+        # Content-based: the same role (same company + title) is one id, no
+        # matter the location, source, or posting id. Collapses duplicates and
+        # keeps a role from being emailed more than once.
+        c = _NORM.sub("", (self.company or "").lower())
+        t = _NORM.sub("", (self.title or "").lower())
+        return hashlib.sha1(f"{c}|{t}".encode()).hexdigest()[:16]

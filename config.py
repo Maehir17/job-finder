@@ -30,6 +30,9 @@ MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "30"))
 # Tighter default cutoff; good companies are allowed up to MAX_AGE_DAYS.
 RECENT_DAYS = int(os.environ.get("RECENT_DAYS", "5"))
 
+# How long a seen role is remembered; after this it can re-alert (reopen).
+SEEN_TTL_DAYS = int(os.environ.get("SEEN_TTL_DAYS", "14"))
+
 # Optional source API keys. Each source stays dormant until its keys are set.
 USAJOBS_KEY = os.environ.get("USAJOBS_KEY", "")
 USAJOBS_EMAIL = os.environ.get("USAJOBS_EMAIL", "")

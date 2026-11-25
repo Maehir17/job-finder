@@ -4,7 +4,7 @@ from typing import Callable
 import config
 import jd
 from filters import age_days, is_recent, is_relevant, is_us
-from pm_filters import is_pm_relevant, is_swe_good_company
+from pm_filters import is_good_company, is_pm_relevant, is_swe_good_company
 from sources.base import Job
 
 
@@ -25,6 +25,8 @@ class Profile:
     # Final pass over only the new roles about to be emailed (keeps costly JD
     # reads bounded to a small set).
     email_filter: Callable[[list[Job]], list[Job]] = _identity
+    # Whether a company counts as "top" for ranking the digest.
+    is_top: Callable[[str], bool] = lambda c: False
 
 
 def _swe_recent(j: Job) -> bool:
@@ -56,10 +58,11 @@ def active_profiles() -> list[Profile]:
     if config.NOTIFY_EMAIL:
         profiles.append(Profile("swe", config.NOTIFY_EMAIL, "software", "entry-level SWE",
                                 _swe_match, config.RESEND_API_KEY,
-                                email_filter=jd.keep_software))
+                                email_filter=jd.keep_software,
+                                is_top=is_swe_good_company))
     if config.NOTIFY_EMAIL_PM:
         profiles.append(Profile("pm", config.NOTIFY_EMAIL_PM, "product, strategy & marketing",
                                 "product / strategy / marketing", _pm_match,
                                 config.RESEND_API_KEY_PM or config.RESEND_API_KEY,
-                                verify=jd.keep_new_grad))
+                                verify=jd.keep_new_grad, is_top=is_good_company))
     return profiles

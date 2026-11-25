@@ -88,6 +88,12 @@ def _row(j: Job) -> str:
         if days <= 2
         else ""
     )
+    star = (
+        '<span style="color:#d4a017;margin-right:5px;font-size:14px;'
+        'vertical-align:middle">&#9733;</span>'
+        if getattr(j, "top", False)
+        else ""
+    )
     edge = f"border-top:1px solid {_LINE}"
     return (
         f"<tr>"
@@ -96,7 +102,7 @@ def _row(j: Job) -> str:
         f'style="width:30px;height:30px;border-radius:8px;border:1px solid {_TILE};'
         f'background:#fff;object-fit:contain;display:block"></td>'
         f'<td style="padding:13px 10px;{edge};vertical-align:middle">'
-        f'<div style="font-size:16px;font-weight:600;color:{_INK}">{dot}{role}</div>'
+        f'<div style="font-size:16px;font-weight:600;color:{_INK}">{star}{dot}{role}</div>'
         f'<div style="font-size:14px;color:{_MUTED};margin-top:3px">{meta}</div></td>'
         f'<td style="padding:13px 8px;{edge};vertical-align:middle;font-size:13px;'
         f'color:{_FAINT};white-space:nowrap">{age_label}</td>'

@@ -24,6 +24,7 @@ Adzuna:5977597169 2026-11-25
 Adzuna:5977637360 2026-11-25
 Adzuna:5977857318 2026-11-25
 Adzuna:5978063510 2026-11-25
+Adzuna:5978296738 2026-11-25
 Adzuna:5978378415 2026-11-25
 Adzuna:5978385359 2026-11-25
 Adzuna:5978389357 2026-11-25
@@ -151,6 +152,7 @@ Simplify:f7c334e4-cf93-44b4-a838-64e47a83f8c1 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/general-dynamics-information-technology-servicenow-developer 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25
+Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-25
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-25
 ash:0081a0a9-e34a-4932-bf55-f6737a17b46a 2026-11-25
@@ -610,12 +612,14 @@ wd:10325070 2026-11-25
 wd:10332851 2026-11-25
 wd:10340846 2026-11-25
 wd:68778 2026-11-25
+wd:84662 2026-11-25
 wd:jr-0002406 2026-11-25
 wd:jr-46298 2026-11-25
 wd:jr102285 2026-11-25
 wd:jr102286 2026-11-25
 wd:jr368047 2026-11-25
 wd:r-005360 2026-11-25
+wd:r-100810 2026-11-25
 wd:r0144180 2026-11-25
 wd:r0254289 2026-11-25
 wd:r0254296 2026-11-25

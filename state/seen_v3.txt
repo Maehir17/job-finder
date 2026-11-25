@@ -150,6 +150,7 @@ Simplify:f7c334e4-cf93-44b4-a838-64e47a83f8c1 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/general-dynamics-information-technology-servicenow-developer 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25
+Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-25
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-25
 ash:0081a0a9-e34a-4932-bf55-f6737a17b46a 2026-11-25
 ash:02ca6e34-9827-4183-b05c-b73d06038640 2026-11-25
@@ -206,6 +207,7 @@ ash:84288bc3-684f-46da-a183-fd883a6d5538 2026-11-25
 ash:87d6c46a-365c-4d97-98ca-de7e29b6cf72 2026-11-25
 ash:890ed347-bbe9-4f0b-abd8-72994873a230 2026-11-25
 ash:8d8378cf-edf2-4c86-afcc-49df91ece2e4 2026-11-25
+ash:8fda4773-a81f-4e96-b27e-c12c1b53a969 2026-11-25
 ash:939892e5-5273-4bfc-8c41-a6c51cabb228 2026-11-25
 ash:9431db0b-904e-4f91-8be7-87fad304db6d 2026-11-25
 ash:9554e35a-bdc4-4095-95f0-210f42f31cf8 2026-11-25
@@ -320,6 +322,7 @@ gh:8209363003 2026-11-25
 gh:8209761003 2026-11-25
 gh:8314058 2026-11-25
 gh:8334849 2026-11-25
+gh:8355577 2026-11-25
 gh:8355591 2026-11-25
 gh:8375179 2026-11-25
 gh:8375181 2026-11-25
@@ -509,6 +512,7 @@ vanshb03:7688e157-9cb0-41b2-b40b-5be0cd878e49 2026-11-25
 vanshb03:7803ce9c-7595-45b1-8288-ee7794d42d92 2026-11-25
 vanshb03:78b9daf6-13af-4bab-9e61-b888d3694430 2026-11-25
 vanshb03:792f2acf-1f76-43d2-94b2-6346e423ddb7 2026-11-25
+vanshb03:7ae6fd19-c6d8-4ba8-9c35-ccc5dd237326 2026-11-25
 vanshb03:7c10417c-172b-4a4e-a570-d4275e6c2d1e 2026-11-25
 vanshb03:7c9ec11c-8b8a-40fb-a6c5-1251c7334a0e 2026-11-25
 vanshb03:7d0ac746-56b3-4320-b2c6-ad1a2b82e95a 2026-11-25

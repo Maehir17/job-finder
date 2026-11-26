@@ -166,7 +166,10 @@ WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-develop
 Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
+Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-26
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-26
+Workday:/job/USA---Berkeley-MO/Associate-Product-Security-Engineer_JR2026527678-1 2026-11-26
+Workday:/job/USA---Berkeley-MO/Mid-Level-Product-Security-Engineer_JR2026527679-1 2026-11-26
 ash:0081a0a9-e34a-4932-bf55-f6737a17b46a 2026-11-25
 ash:02ca6e34-9827-4183-b05c-b73d06038640 2026-11-26
 ash:06c2599d-4dd5-4f97-843f-7194b546f042 2026-11-26

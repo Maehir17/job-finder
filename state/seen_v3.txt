@@ -1,5 +1,7 @@
 Adzuna:5946099205 2026-11-26
 Adzuna:5965013844 2026-11-26
+Adzuna:5965013903 2026-11-26
+Adzuna:5965013914 2026-11-26
 Adzuna:5972597476 2026-11-25
 Adzuna:5973048696 2026-11-25
 Adzuna:5973117880 2026-11-25
@@ -46,6 +48,7 @@ Adzuna:5978688529 2026-11-26
 Adzuna:5978823738 2026-11-26
 Adzuna:5978873862 2026-11-26
 Adzuna:5979485403 2026-11-26
+Adzuna:5979599500 2026-11-26
 Keugene11:amazon-amazon-10607758 2026-11-26
 Keugene11:eightfold-apply.careers.microsoft.com-1970393557073425 2026-11-26
 Keugene11:eightfold-apply.careers.microsoft.com-1970393557075456 2026-11-26
@@ -176,6 +179,7 @@ Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
 Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-26
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
+Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-26
 Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-26
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-26
 Workday:/job/US-CA-Brea-Nuclear/Programmer-Analyst_JR14360-1 2026-11-26
@@ -666,6 +670,8 @@ wd:46996 2026-11-26
 wd:68778 2026-11-25
 wd:84662 2026-11-26
 wd:jr-0002406 2026-11-26
+wd:jr-0110471 2026-11-26
+wd:jr-0110475 2026-11-26
 wd:jr-46298 2026-11-25
 wd:jr003086 2026-11-26
 wd:jr003190 2026-11-26
@@ -685,10 +691,15 @@ wd:r0144180 2026-11-25
 wd:r0254289 2026-11-25
 wd:r0254296 2026-11-25
 wd:r1136803 2026-11-26
+wd:r141445 2026-11-26
+wd:r143475 2026-11-26
+wd:r143498 2026-11-26
 wd:r173462 2026-11-26
 wd:r2222 2026-11-26
 wd:r2223 2026-11-26
 wd:r2227 2026-11-26
+wd:r2603902 2026-11-26
+wd:r2603904 2026-11-26
 wd:r29102 2026-11-26
 wd:r2912 2026-11-26
 wd:r3450 2026-11-25

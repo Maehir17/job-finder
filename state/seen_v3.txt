@@ -155,7 +155,7 @@ WeWorkRemotely:https://weworkremotely.com/remote-jobs/general-dynamics-informati
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026-11-26
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
-Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-25
+Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-25
 ash:0081a0a9-e34a-4932-bf55-f6737a17b46a 2026-11-25
 ash:02ca6e34-9827-4183-b05c-b73d06038640 2026-11-26
@@ -233,6 +233,7 @@ ash:baa78673-4c25-4d61-8888-2eac4c63d8c5 2026-11-26
 ash:bd1ac97f-20f9-4727-9f92-7064035a416f 2026-11-26
 ash:c5fba54c-37ee-4172-987d-7ff6bbd51d94 2026-11-26
 ash:c97e5668-29ee-4810-b7cc-35331ac123f5 2026-11-26
+ash:cc1d3968-2b15-4442-828c-7950077c3a8a 2026-11-26
 ash:cc1ea124-47ad-4b81-9e4e-0c69e525b62a 2026-11-26
 ash:d1183b00-6590-4fe4-a585-28d84e578fe3 2026-11-26
 ash:d212845e-9668-4a01-a30d-0d24c5a4f2b2 2026-11-26
@@ -320,7 +321,7 @@ gh:6242561004 2026-11-26
 gh:6264524004 2026-11-26
 gh:6267351004 2026-11-26
 gh:6267643004 2026-11-25
-gh:6270593004 2026-11-25
+gh:6270593004 2026-11-26
 gh:6270764004 2026-11-26
 gh:8131089 2026-11-26
 gh:8181183003 2026-11-26
@@ -408,6 +409,10 @@ gh:8959513002 2026-11-26
 gh:8959556002 2026-11-26
 gh:8959723002 2026-11-26
 gh:8961339002 2026-11-26
+gh:8962752002 2026-11-26
+gh:8962753002 2026-11-26
+gh:8962756002 2026-11-26
+gh:8962757002 2026-11-26
 gh:8962912002 2026-11-26
 gh:8963078002 2026-11-26
 gh:8963079002 2026-11-26

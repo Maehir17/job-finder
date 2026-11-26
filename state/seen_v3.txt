@@ -184,6 +184,7 @@ Workday:/job/Carlsbad-California-United-States-of-America/Product-Developer_R-02
 Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
 Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-26
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
+Workday:/job/Minneapolis-Minnesota/Cloud-Engineer_R26_4393-1 2026-11-26
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
 Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-26
 Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-26

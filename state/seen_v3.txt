@@ -185,6 +185,7 @@ Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
 Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-26
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
+Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-26
 Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-26
 Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-26
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-26
@@ -662,7 +663,7 @@ vanshb03:fc6b3b8c-6433-4010-909a-3c6ac39ac502 2026-11-26
 vanshb03:fe3a50c9-b467-40a8-8450-577080666a01 2026-11-26
 vanshb03:fe8e5156-723b-48df-afdd-a8160a89e419 2026-11-26
 vanshb03:ff18715a-6787-4b17-935f-4a954c7012b2 2026-11-26
-wd:00047870 2026-11-25
+wd:00047870 2026-11-26
 wd:10325070 2026-11-26
 wd:10332851 2026-11-26
 wd:10340846 2026-11-25

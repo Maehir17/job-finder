@@ -163,7 +163,9 @@ Simplify:f7c334e4-cf93-44b4-a838-64e47a83f8c1 2026-11-25
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/general-dynamics-information-technology-servicenow-developer 2026-11-26
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026-11-26
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25
+Workday:/job/Carlsbad-California-United-States-of-America/Product-Developer_R-027217-3 2026-11-26
 Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
+Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-26
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
 Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-26
@@ -655,8 +657,13 @@ wd:68778 2026-11-25
 wd:84662 2026-11-25
 wd:jr-0002406 2026-11-25
 wd:jr-46298 2026-11-25
+wd:jr003086 2026-11-26
+wd:jr003190 2026-11-26
+wd:jr003191 2026-11-26
 wd:jr102285 2026-11-26
 wd:jr102286 2026-11-26
+wd:jr2026527678 2026-11-26
+wd:jr2026527679 2026-11-26
 wd:jr368047 2026-11-26
 wd:r-00192861 2026-11-26
 wd:r-00197513 2026-11-26

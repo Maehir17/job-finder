@@ -185,6 +185,7 @@ Simplify:edc801c6-bd58-4fa1-a574-fa3e72eef52c 2026-11-25
 Simplify:f0885220-6817-4024-8e1b-6c94e820f385 2026-11-25
 Simplify:f11a83b2-59da-43ef-9f7c-3b67a7e3411c 2026-11-27
 Simplify:f7c334e4-cf93-44b4-a838-64e47a83f8c1 2026-11-25
+Simplify:fc96342b-9d7c-4f3f-a93e-70d935ac86b4 2026-11-27
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/general-dynamics-information-technology-servicenow-developer 2026-11-27
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026-11-27
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25

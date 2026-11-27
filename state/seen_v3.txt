@@ -60,6 +60,7 @@ Adzuna:5980142379 2026-11-27
 Adzuna:5980142551 2026-11-27
 Adzuna:5980142611 2026-11-27
 Adzuna:5980142809 2026-11-27
+Adzuna:5980801026 2026-11-27
 Keugene11:amazon-amazon-10607758 2026-11-26
 Keugene11:eightfold-apply.careers.microsoft.com-1970393557073425 2026-11-27
 Keugene11:eightfold-apply.careers.microsoft.com-1970393557075456 2026-11-27
@@ -103,6 +104,7 @@ Keugene11:external--edc801c6-bd58-4fa1-a574-fa3e72eef52c 2026-11-25
 Keugene11:external--f0885220-6817-4024-8e1b-6c94e820f385 2026-11-25
 Keugene11:external--f11a83b2-59da-43ef-9f7c-3b67a7e3411c 2026-11-27
 Keugene11:external--f7c334e4-cf93-44b4-a838-64e47a83f8c1 2026-11-25
+Keugene11:external--fc96342b-9d7c-4f3f-a93e-70d935ac86b4 2026-11-27
 Keugene11:icims-career-schwab.icims.com-132095 2026-11-27
 Keugene11:icims-careers-bnh.icims.com-26055 2026-11-27
 Keugene11:icims-careers-peraton.icims.com-178214 2026-11-27
@@ -120,6 +122,7 @@ Keugene11:oracle-jpmc.fa.oraclecloud.com|cx_1001-210803021 2026-11-27
 Keugene11:rippling-saliense-4bc9e33f-5579-4138-9294-17b43e37d8b4 2026-11-27
 Keugene11:workable-neurohire-dot-a-i-d9a059df68 2026-11-25
 Keugene11:workable-raydar-4ee5e20cfc 2026-11-27
+Keugene11:workable-raydar-9ffe64caed 2026-11-27
 Keugene11:workable-serko-ltd-2bd3d4f4de 2026-11-27
 RemoteOK:1138104 2026-11-27
 RemoteOK:1138185 2026-11-27
@@ -705,6 +708,7 @@ wd:jr003190 2026-11-27
 wd:jr003191 2026-11-27
 wd:jr102285 2026-11-27
 wd:jr102286 2026-11-27
+wd:jr102813 2026-11-27
 wd:jr1045935 2026-11-27
 wd:jr2026527678 2026-11-27
 wd:jr2026527679 2026-11-26

@@ -119,6 +119,7 @@ Keugene11:oracle-jpmc.fa.oraclecloud.com|cx_1001-210800132 2026-11-27
 Keugene11:oracle-jpmc.fa.oraclecloud.com|cx_1001-210803021 2026-11-27
 Keugene11:rippling-saliense-4bc9e33f-5579-4138-9294-17b43e37d8b4 2026-11-27
 Keugene11:workable-neurohire-dot-a-i-d9a059df68 2026-11-25
+Keugene11:workable-raydar-4ee5e20cfc 2026-11-27
 Keugene11:workable-serko-ltd-2bd3d4f4de 2026-11-27
 RemoteOK:1138104 2026-11-27
 Simplify:02f41834-2a2e-4964-8780-2ad1148d6a18 2026-11-27
@@ -189,14 +190,14 @@ WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25
 Workday:/job/Carlsbad-California-United-States-of-America/Product-Developer_R-027217-3 2026-11-27
 Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
-Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-26
+Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-27
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-25
 Workday:/job/Minneapolis-Minnesota/Cloud-Engineer_R26_4393-1 2026-11-27
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-26
 Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-27
 Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-26
 Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-26
-Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-26
+Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-27
 Workday:/job/US-CA-Brea-Nuclear/Programmer-Analyst_JR14360-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Associate-Product-Security-Engineer_JR2026527678-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Mid-Level-Product-Security-Engineer_JR2026527679-1 2026-11-26

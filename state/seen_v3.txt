@@ -188,6 +188,7 @@ Simplify:f7c334e4-cf93-44b4-a838-64e47a83f8c1 2026-11-25
 Simplify:fc96342b-9d7c-4f3f-a93e-70d935ac86b4 2026-11-27
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/general-dynamics-information-technology-servicenow-developer 2026-11-27
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/oddball-data-engineer 2026-11-27
+WeWorkRemotely:https://weworkremotely.com/remote-jobs/one-applied-scientist-foundation-models 2026-11-27
 WeWorkRemotely:https://weworkremotely.com/remote-jobs/sitecare-wordpress-developer-1 2026-11-25
 Workday:/job/Carlsbad-California-United-States-of-America/Product-Developer_R-027217-3 2026-11-27
 Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26

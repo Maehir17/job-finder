@@ -124,6 +124,8 @@ Keugene11:oracle-fa-exty-saasfaprod1.fa.ocs.oraclecloud.com|cx_1-120703 2026-11-
 Keugene11:oracle-jpmc.fa.oraclecloud.com|cx_1001-210800132 2026-11-28
 Keugene11:oracle-jpmc.fa.oraclecloud.com|cx_1001-210803021 2026-11-28
 Keugene11:rippling-saliense-4bc9e33f-5579-4138-9294-17b43e37d8b4 2026-11-28
+Keugene11:workable-hirehawk-e300ae4f78 2026-11-28
+Keugene11:workable-neurohire-dot-a-i-c81e83eefa 2026-11-28
 Keugene11:workable-neurohire-dot-a-i-d9a059df68 2026-11-25
 Keugene11:workable-raydar-4ee5e20cfc 2026-11-28
 Keugene11:workable-raydar-9ffe64caed 2026-11-28
@@ -207,7 +209,7 @@ Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist
 Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-27
 Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-27
 Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-27
-Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-27
+Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-28
 Workday:/job/US-CA-Brea-Nuclear/Programmer-Analyst_JR14360-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Associate-Product-Security-Engineer_JR2026527678-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Mid-Level-Product-Security-Engineer_JR2026527679-1 2026-11-26
@@ -359,6 +361,7 @@ gh:5301146007 2026-11-25
 gh:5302781007 2026-11-28
 gh:5308625007 2026-11-28
 gh:5309279007 2026-11-28
+gh:5309839007 2026-11-28
 gh:5462966008 2026-11-25
 gh:5462972008 2026-11-26
 gh:5468374008 2026-11-28

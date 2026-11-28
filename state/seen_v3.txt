@@ -207,7 +207,7 @@ Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-27
 Workday:/job/Minneapolis-Minnesota/Cloud-Engineer_R26_4393-1 2026-11-27
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-27
 Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-27
-Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-27
+Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-28
 Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-27
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-28
 Workday:/job/US-CA-Brea-Nuclear/Programmer-Analyst_JR14360-1 2026-11-26
@@ -726,6 +726,7 @@ wd:jr102813 2026-11-27
 wd:jr1045935 2026-11-27
 wd:jr2026527678 2026-11-27
 wd:jr2026527679 2026-11-26
+wd:jr25540 2026-11-28
 wd:jr368047 2026-11-28
 wd:jr37668 2026-11-28
 wd:r-00192861 2026-11-27
@@ -749,7 +750,7 @@ wd:r2222 2026-11-28
 wd:r2223 2026-11-28
 wd:r2227 2026-11-28
 wd:r260023733 2026-11-28
-wd:r2603902 2026-11-27
+wd:r2603902 2026-11-28
 wd:r2603904 2026-11-27
 wd:r2633703 2026-11-28
 wd:r29102 2026-11-28

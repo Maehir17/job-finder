@@ -219,6 +219,7 @@ Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11
 Workday:/job/US-CA-Brea-Nuclear/Programmer-Analyst_JR14360-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Associate-Product-Security-Engineer_JR2026527678-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Mid-Level-Product-Security-Engineer_JR2026527679-1 2026-11-26
+Workday:/job/USA-OH-Cincinnati/Software-Support-Engineer_R0098542-2 2026-11-28
 Workday:/job/USA-VA-Falls-Church/Cloud-DevOps-Engineer_RQ233132-1 2026-11-28
 ash:0081a0a9-e34a-4932-bf55-f6737a17b46a 2026-11-25
 ash:02ca6e34-9827-4183-b05c-b73d06038640 2026-11-28
@@ -722,8 +723,9 @@ wd:335531 2026-11-26
 wd:335532 2026-11-26
 wd:335534 2026-11-27
 wd:335559 2026-11-28
-wd:38181 2026-11-27
-wd:46996 2026-11-27
+wd:38181 2026-11-28
+wd:46855 2026-11-28
+wd:46996 2026-11-28
 wd:68778 2026-11-25
 wd:84662 2026-11-28
 wd:jr-0002406 2026-11-28

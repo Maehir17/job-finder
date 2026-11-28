@@ -132,6 +132,7 @@ Keugene11:workable-neurohire-dot-a-i-d9a059df68 2026-11-25
 Keugene11:workable-raydar-4ee5e20cfc 2026-11-28
 Keugene11:workable-raydar-9ffe64caed 2026-11-28
 Keugene11:workable-serko-ltd-2bd3d4f4de 2026-11-28
+Keugene11:workday-snc|snc_external_career_site-r0031452-1 2026-11-28
 RemoteOK:1138104 2026-11-28
 RemoteOK:1138185 2026-11-28
 Simplify:02f41834-2a2e-4964-8780-2ad1148d6a18 2026-11-28

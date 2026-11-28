@@ -67,6 +67,7 @@ Adzuna:5980889852 2026-11-27
 Adzuna:5981000124 2026-11-28
 Adzuna:5981002428 2026-11-28
 Adzuna:5981138317 2026-11-28
+Adzuna:5981607051 2026-11-28
 Keugene11:amazon-amazon-10607758 2026-11-26
 Keugene11:eightfold-apply.careers.microsoft.com-1970393557073425 2026-11-28
 Keugene11:eightfold-apply.careers.microsoft.com-1970393557075456 2026-11-27
@@ -209,7 +210,7 @@ Workday:/job/Carlsbad-California-United-States-of-America/Product-Developer_R-02
 Workday:/job/Chicago-IL/Senior-ServiceNow-Platform-Engineer_R10438-1 2026-11-26
 Workday:/job/Client-Site---Alexandria-VA/Data-Scientist_JR2026001473-1 2026-11-28
 Workday:/job/FL-St-Petersburg/Platform-Engineer_R13025-1 2026-11-28
-Workday:/job/Minneapolis-Minnesota/Cloud-Engineer_R26_4393-1 2026-11-27
+Workday:/job/Minneapolis-Minnesota/Cloud-Engineer_R26_4393-1 2026-11-28
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-27
 Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-27
 Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-28
@@ -729,9 +730,9 @@ wd:jr-0002406 2026-11-28
 wd:jr-0110471 2026-11-26
 wd:jr-0110475 2026-11-26
 wd:jr-46298 2026-11-25
-wd:jr003086 2026-11-27
-wd:jr003190 2026-11-27
-wd:jr003191 2026-11-27
+wd:jr003086 2026-11-28
+wd:jr003190 2026-11-28
+wd:jr003191 2026-11-28
 wd:jr102285 2026-11-27
 wd:jr102286 2026-11-27
 wd:jr102813 2026-11-28

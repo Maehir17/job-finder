@@ -215,7 +215,7 @@ Workday:/job/Minneapolis-Minnesota/Cloud-Engineer_R26_4393-1 2026-11-28
 Workday:/job/Remote---Texas/Human-Health-Data-Scientist-Radiation-Epidemiologist_R-100856-1 2026-11-27
 Workday:/job/Reno-NV/Associate-Software-Engineer_R322882-1 2026-11-27
 Workday:/job/Reston-VA/Salesforce-Developer--Remote_R2603890-1 2026-11-28
-Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-27
+Workday:/job/South-San-Francisco/Computational---Applied-AI---Scientist_202611-129355 2026-11-28
 Workday:/job/US---Texas---Austin/Forward-Deployed-AI-Engineer_R0019158-1 2026-11-28
 Workday:/job/US-CA-Brea-Nuclear/Programmer-Analyst_JR14360-1 2026-11-26
 Workday:/job/USA---Berkeley-MO/Associate-Product-Security-Engineer_JR2026527678-1 2026-11-26
